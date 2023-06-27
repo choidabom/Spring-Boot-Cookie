@@ -18,6 +18,17 @@
 - 개발자 도구에서 Application > Storage > Cookies
   <p align=”center”><img width="70%" src="https://github.com/choidabom/Spring-Boot-Cookie/assets/48302257/7c9a2356-4051-493d-995a-dfa1a0204e3a"/></p>
 
+  ### 문제 발생(브라우저 쿠키 수정)과 해결 방안(HttpOnly 설정)
+    - 문제는 Cookies 의 값(Value)을 브라우저에서 수정 가능하다는 것이다.
+    - 이를 해결하려면 **Cookies 에서 HttpOnly 속성을 true로 설정하여 JavaScript를 통한 액세스가 제한하도록 해야한다.**
+    - 위 설정을 하면, 쿠키의 값은 브라우저에서 JavaScript를 통해 직접 액세스할 수 없게 된다.
+    - 따라서 document.cookie 를 사용하여 쿠키 값을 읽을 때, 해당 쿠키가 HttpOnly로 설정되어 있으면 빈 문자열('')이 반환된다.
+    - document.cookie 확인
+        - setHttpOnly(true) 설정되어있지 않을 때
+          <p align=”center”><img width="70%" src="https://github.com/choidabom/Spring-Boot-Cookie/assets/48302257/484d8a15-adc7-4969-b5da-2db48a1a29d4"/></p>
+        - setHttpOnly(true) 설정되어있을 때
+          <p align=”center”><img width="70%" src="https://github.com/choidabom/Spring-Boot-Cookie/assets/48302257/9197edb5-ba30-4ee9-9b45-829579f980fa"/></p>
+
 ## 1. API 응답에 쿠키를 넣는 방법
 
 ### 1) 쿠키 생성

@@ -22,7 +22,7 @@ public class CookieController {
         // HttpServletRequest, HttpServletResponse, ModelMap 은 스프링이 제공하는 객체로 각각 요청, 응답, 데이터 전달을 담당합니다.
         // @CookieValue 어노테이션을 통해 "visitCount"라는 이름의 쿠키 값을 가져옵니다.
         // defaultValue 는 쿠키가 없을 경우 기본값으로 사용됩니다.
-        
+
         cookieValue = getCookieValue(cookieValue);
         addCookieAndView(response, modelMap, cookieValue);
 
@@ -46,10 +46,12 @@ public class CookieController {
         Cookie visitCountCookie = new Cookie("visitCount", cookieValue);
         visitCountCookie.setMaxAge(24 * 60 * 60);
         visitCountCookie.setPath("/");
+        visitCountCookie.setHttpOnly(true); // HttpOnly 속성 추가
+
         // "visitCount"라는 이름과 cookieValue 값을 가지는 쿠키를 생성합니다.
         // setMaxAge() 메서드를 통해 쿠키의 유효 기간을 설정합니다. 여기서는 24시간(1일)로 설정합니다.
         // setPath() 메서드를 통해 쿠키의 적용 범위를 "/"(루트)로 설정합니다.
-
+        // setHttpOnly() 메서드를 통해 JavaScript 를 통한 액세스가 제한되고, 브라우저와 서버 간의 통신을 안전하게 할 수 있다.
         response.addCookie(visitCountCookie);
         // 생성한 쿠키를 응답에 추가합니다. 이를 통해 클라이언트에게 쿠키가 전달됩니다.
 
