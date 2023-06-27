@@ -81,3 +81,29 @@ response.addCookie(visitCountCookie);
 - 프로젝트 디렉터리 구조 내에서 Thymeleaf가 기본으로 사용될 경로
     - 프로젝트 디렉터리(root) > src > main > resources > **templates 폴더**
     - (+ just 추가 설명) templates 폴더와 같은 위치에 있는 **static 폴더**는 정적 파일(css)을 담는 폴더
+
+### + About Cookie
+
+  <details>
+  <summary> More) 쿠키에 대해서 </summary>
+  <h5>쿠키의 정의</h5>
+  <li>쿠키는 서버가 클라이언트에 저장하는 정보로서, 클라이언트와 연결이 끊어져도 클라이언트에 저장된 정보가 유지되어 웹 서버에 요청을 보낼 때 헤더에 담아서 전송한다.</li>
+  <li>브라우저는 그 데이터 조각들을 저장해 놓았다가, 동일한 서버에 재 요청 시 저장된 데이터를 함께 전송한다.</li>
+  <li>쿠키는 두 요청이 동일한 브라우저에서 들어왔는지 아닌지를 판단할 때 주로 사용한다. 이를 이용하면 사용자의 로그인 상태를 유지할 수 있다</li>
+
+  <br>  
+  <h5>쿠키의 목적</h5>
+   <li>세션 관리(Session management)</li>
+    <ul>서버에 저장해야 할 로그인, 장바구니, 게임 스코어 등의 정보 관리</ul>
+   <li>개인화(Personalization)</li>
+    <ul>서버에 저장해야 할 로그인, 장바구니, 게임 스코어 등의 정보 관리</ul>
+   <li>트래킹(Tracking)</li>
+    <ul>사용자 행동을 기록하고 분석하는 용도</ul>
+
+
+
+
+
+  </details>
+
+ref. https://github.com/ohohoi/spring-boot-cookie
