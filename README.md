@@ -11,7 +11,7 @@
 
 ### 0. Spring Boot Cookie Test
 
-- Cookie 카운트 확인
+- Cookie 카운트 확인 - **이전에 방문한 적이 있는 웹서버에 다시 방문했을 때 몇 번째 방문인지**
   <p align=”center”><img width="70%" src="https://github.com/choidabom/Spring-Boot-Cookie/assets/48302257/dedfa2fc-1b58-4c55-b2cd-9f01dfc93d18"/></p>
 
 
